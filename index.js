@@ -55,8 +55,14 @@ function rendergame() {
 
 //function to draw a new card 
 function newgame(){
-    let card3 = getrandom();
-    sum += card3 ;
-    cards.push(card3);
-    rendergame();
+    if(isAlive && hasBlackJack === false){
+        let card3 = getrandom();
+        sum += card3 ;
+        cards.push(card3);
+        rendergame();
+    }else {
+        message = "Game Over - You cant draw Cards Anymore" ;
+        messageEl.textContent = message;
+    }
+    
 }
